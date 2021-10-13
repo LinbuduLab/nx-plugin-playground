@@ -1,6 +1,40 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "vite-app": {
+      "root": "apps/vite-app",
+      "projectType": "application",
+      "sourceRoot": "apps/vite-app/src",
+      "targets": {
+        "serve": {
+          "executor": "nx-plugin-vite:serve",
+          "options": {
+            "configFile": "apps/vite-app/vite.config.ts",
+            "port": 3000,
+            "host": false,
+            "https": false
+          }
+        },
+        "preview": {
+          "executor": "nx-plugin-vite:preview",
+          "options": {
+            "configFile": "apps/vite-app/vite.config.ts"
+          }
+        },
+        "build": {
+          "executor": "nx-plugin-vite:build",
+          "options": {
+            "outDir": "dist",
+            "configFile": "apps/vite-app/vite.config.ts",
+            "watch": false,
+            "write": true,
+            "emitAtRootLevel": false,
+            "manifest": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   }
