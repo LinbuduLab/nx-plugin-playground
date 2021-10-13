@@ -27,6 +27,9 @@
     ]
   },
   "projects": {
+    "snowpack-app": {
+      "tags": []
+    },
     "vite-app": {
       "tags": []
     }

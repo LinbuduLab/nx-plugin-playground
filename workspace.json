@@ -1,6 +1,34 @@
 {
   "version": 2,
   "projects": {
+    "snowpack-app": {
+      "root": "apps/snowpack-app",
+      "projectType": "application",
+      "sourceRoot": "apps/snowpack-app/src",
+      "targets": {
+        "serve": {
+          "executor": "nx-plugin-snowpack:serve",
+          "options": {
+            "root": "apps/snowpack-app",
+            "configPath": "snowpack.config.mjs",
+            "verbose": false,
+            "clearCache": true,
+            "open": "chrome"
+          }
+        },
+        "build": {
+          "executor": "nx-plugin-snowpack:build",
+          "options": {
+            "root": "apps/snowpack-app",
+            "configPath": "snowpack.config.mjs",
+            "watch": true,
+            "clearCache": true,
+            "verbose": false,
+            "clean": true
+          }
+        }
+      }
+    },
     "vite-app": {
       "root": "apps/vite-app",
       "projectType": "application",
